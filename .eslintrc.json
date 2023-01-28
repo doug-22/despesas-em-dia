@@ -26,7 +26,8 @@
     "react",
     "@typescript-eslint",
     "eslint-plugin-import-helpers",
-    "prettier"
+    // "prettier",
+    "react-hooks"
   ],
   "rules": {
     "camelcase": "off",
