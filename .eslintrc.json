@@ -1,17 +1,135 @@
+// {
+//   "env": {
+//     "browser": true,
+//     "es2021": true,
+//     "jest": true
+//   },
+//   "extends": [
+//     "plugin:react/recommended",
+//     "airbnb",
+//     "plugin:@typescript-eslint/recommended",
+//     "prettier",
+//     "plugin:prettier/recommended",
+//     "eslint:recommended",
+//     "plugin:@typescript-eslint/eslint-recommended",
+//     "plugin:@next/next/recommended"
+//   ],
+//   "parser": "@typescript-eslint/parser",
+//   "parserOptions": {
+//     "ecmaFeatures": {
+//       "jsx": true
+//     },
+//     "ecmaVersion": 12,
+//     "sourceType": "module"
+//   },
+//   "plugins": [
+//     "react",
+//     "@typescript-eslint",
+//     "eslint-plugin-import-helpers",
+//     // "prettier",
+//     "react-hooks"
+//   ],
+//   "rules": {
+//     "camelcase": "off",
+//     "import/no-unresolved": "error",
+//     "@typescript-eslint/naming-convention": [
+//       "error",
+//       {
+//         "selector": "interface",
+//         "format": [
+//           "PascalCase"
+//         ],
+//         "custom": {
+//           "regex": "^I[A-Z]",
+//           "match": true
+//         }
+//       }
+//     ],
+//     "class-methods-use-this": "off",
+//     "import/prefer-default-export": "off",
+//     "no-shadow": "off",
+//     "no-console": "off",
+//     "no-useless-constructor": "off",
+//     "no-empty-function": "off",
+//     "lines-between-class-members": "off",
+//     "import/extensions": [
+//       "error",
+//       "ignorePackages",
+//       {
+//         "ts": "never",
+//         "tsx": "never"
+//       }
+//     ],
+//     "import-helpers/order-imports": [
+//       "warn",
+//       {
+//         "newlinesBetween": "always",
+//         "groups": [
+//           "module",
+//           "/^@shared/",
+//           [
+//             "parent",
+//             "sibling",
+//             "index"
+//           ]
+//         ],
+//         "alphabetize": {
+//           "order": "asc",
+//           "ignoreCase": true
+//         }
+//       }
+//     ],
+//     "import/no-extraneous-dependencies": [
+//       "error",
+//       {
+//         "devDependencies": [
+//           "**/*.spec.js"
+//         ]
+//       }
+//     ],
+//     "prettier/prettier": "error",
+//     "react/jsx-filename-extension": [
+//       1,
+//       {
+//         "extensions": [
+//           ".jsx",
+//           ".tsx"
+//         ]
+//       }
+//     ],
+//     "react/react-in-jsx-scope": "off",
+//     "no-use-before-define": "off",
+//     "@typescript-eslint/no-use-before-define": [
+//       "error"
+//     ],
+//     "react/jsx-props-no-spreading": "off",
+//     "react/no-unescaped-entities": "off",
+//     "@next/next/no-page-custom-font": "off"
+//   },
+//   "settings": {
+//     "import/resolver": {
+//       "typescript": {}
+//     }
+//   }
+// }
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "jest": true
+    "es2020": true,
+    "jest": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
     "plugin:@next/next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -19,96 +137,19 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 11,
     "sourceType": "module"
   },
   "plugins": [
     "react",
-    "@typescript-eslint",
-    "eslint-plugin-import-helpers",
-    // "prettier",
-    "react-hooks"
+    "react-hooks",
+    "@typescript-eslint"
   ],
   "rules": {
-    "camelcase": "off",
-    "import/no-unresolved": "error",
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "interface",
-        "format": [
-          "PascalCase"
-        ],
-        "custom": {
-          "regex": "^I[A-Z]",
-          "match": true
-        }
-      }
-    ],
-    "class-methods-use-this": "off",
-    "import/prefer-default-export": "off",
-    "no-shadow": "off",
-    "no-console": "off",
-    "no-useless-constructor": "off",
-    "no-empty-function": "off",
-    "lines-between-class-members": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "always",
-        "groups": [
-          "module",
-          "/^@shared/",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
-        ],
-        "alphabetize": {
-          "order": "asc",
-          "ignoreCase": true
-        }
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.spec.js"
-        ]
-      }
-    ],
-    "prettier/prettier": "error",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".jsx",
-          ".tsx"
-        ]
-      }
-    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
-    "react/jsx-props-no-spreading": "off",
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off"
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
