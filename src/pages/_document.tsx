@@ -1,12 +1,15 @@
-import Document, {Html, Head, Main, NextScript} from "next/document"
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
-  render(){
+  render() {
     return (
       <Html>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap"
+            rel="stylesheet"
+          />
           <title>Despesas Em Dia</title>
           <link rel="shortcut icon" href="favicon.svg" type="image/svg" />
         </Head>
@@ -15,6 +18,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
